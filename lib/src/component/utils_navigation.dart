@@ -5,7 +5,7 @@ part of utils.component;
 class Go {
 
   /// Returns [value] plus 1.
-  //@protected
+
   int increment(int value) => value + 1;
 
   ///

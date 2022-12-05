@@ -48,7 +48,7 @@ extension XUtilString on String{
     return regex.hasMatch(this) ;
   }
   @Deprecated('use isNumeric instead')
-  bool get isNumber => RegExp('').hasMatch(this) ;
+  bool get isNumber => double.tryParse(this) != null;
   //bool get isW => RegExp('').hasMatch(this) ;
 
   bool get isNumeric => double.tryParse(this) != null;

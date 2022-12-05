@@ -13,7 +13,7 @@ part 'src/component/utils_log.dart';
 //RegExp
 
 
-extension XUtils on String{
+extension XUtilString on String{
   //final String kUnique = DataTime.now();
 
   void concatenate(String? str){
@@ -47,18 +47,45 @@ extension XUtils on String{
     final regex = RegExp('^ *(?:[-+*] |[0-9]+[.):] )?');
     return regex.hasMatch(this) ;
   }
-
+  @Deprecated('use isNumeric instead')
   bool get isNumber => RegExp('').hasMatch(this) ;
   //bool get isW => RegExp('').hasMatch(this) ;
+
+  bool get isNumeric => double.tryParse(this) != null;
+  bool get isNotNumeric => double.tryParse(this) == null;
+
 }
 
-extension on int {
+extension XUtilStringNull on String?{
+
+  bool get isNumeric {
+    if (this == null) return false;
+    return double.tryParse(this!) != null;
+  }
+
+  bool get isNotNumeric {
+    if (this == null) return true;
+    return double.tryParse(this!) == null;
+  }
+
+}
+
+extension XUtilInt on int {
   bool toBoolean(){
     assert(this < 0);
     return this != 0;
   }
 
   //bool toBool() => toBoolean();
+}
+
+extension XUtilIntNull on int? {
+  bool toBoolean(){
+    assert(this! < 0);
+    return this != 0;
+  }
+
+//bool toBool() => toBoolean();
 }
 
 

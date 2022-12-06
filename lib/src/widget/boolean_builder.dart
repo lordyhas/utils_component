@@ -42,7 +42,7 @@ class ContainerBooleanBuilder extends BooleanBuilderWidget {
 class BooleanBuilder extends BooleanBuilderWidget {
   @Deprecated("use condition instead")
   final bool check;
-  final bool condition;
+  final bool Function() condition;
   final Widget ifTrue;
   final Widget ifFalse;
 
@@ -57,18 +57,26 @@ class BooleanBuilder extends BooleanBuilderWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (condition || check) return ifTrue;
+    if (condition() || check) return ifTrue;
     return ifFalse;
   }
 }
 
-class CaseBuilder extends CaseBuilderWidget {
+@Deprecated("Don't use CaseBuilder")
+class CaseBuilder<T> extends CaseBuilderWidget {
+
+  final int Function() condition;
+  final List<Widget> children;
   const CaseBuilder({
     Key? key,
-  }) : super(key: key);
-
+    required this.condition,
+    required this.children,
+  }) : assert(children.length <= 0, "children can't be empty"), super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container();
+    int index = condition();
+    return Container(
+      child: children[index],
+    );
   }
 }

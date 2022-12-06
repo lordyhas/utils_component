@@ -51,6 +51,7 @@ class BooleanBuilder extends BooleanBuilderWidget {
     required this.condition,
     required this.ifTrue,
     required this.ifFalse,
+    @Deprecated("use condition instead")
     this.check = true,
   }) : super(key: key);
 

@@ -1,12 +1,14 @@
 library utils.component;
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 export 'src/utils_widget.dart';
 
 part 'src/component/utils_navigation.dart';
 part 'src/component/utils_log.dart';
+part 'src/component/utils_values.dart';
 
 
 //abstract class Utils {}

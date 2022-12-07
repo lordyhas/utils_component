@@ -57,7 +57,7 @@ class BooleanBuilder extends BooleanBuilderWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (condition() || check) return ifTrue;
+    if (condition()) return ifTrue;
     return ifFalse;
   }
 }

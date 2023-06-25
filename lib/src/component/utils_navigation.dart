@@ -1,7 +1,8 @@
 
 part of utils.component;
 
-/// A Calculator.
+/// A Go Route Navigator.
+@Deprecated("use Flutter Navigator instead")
 class Go {
 
   /// Returns [value] plus 1.
@@ -14,10 +15,12 @@ class Go {
   }*/
 
   //@optionalTypeArgs
+  @deprecated
   static void back<T extends Object?>(BuildContext context, [ T? result ]) {
     Go.of(context).pop<T>(result);
   }
 
+  @deprecated
   static Future<T?> to<T extends Object?>({
     required BuildContext context,
     required Widget Function(BuildContext context) builder}
@@ -25,10 +28,12 @@ class Go {
       builder: builder,
   ));
 
+  @deprecated
   toNextPage(BuildContext context,  {required Widget page}){
     Go.to(context: context, builder: (BuildContext context) => page );
   }
 
+  @deprecated
   static NavigatorState of(BuildContext context, {
     bool rootNavigator = false,
   }) => Navigator.of(context, rootNavigator: rootNavigator);

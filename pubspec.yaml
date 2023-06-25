@@ -1,11 +1,11 @@
 name: utils_component
-description: A new Flutter project.
-version: 0.0.1
+description: Some flutter component make life easy.
+version: 0.0.2
 #homepage: '',
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.19.3 <3.0.0"
+  flutter: ">=2.2.0"
 
 dependencies:
   flutter:

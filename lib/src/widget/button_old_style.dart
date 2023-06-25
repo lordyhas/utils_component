@@ -11,7 +11,7 @@ textColor: theme.colorScheme.primary,
       ),
  */
 
-@Deprecated("not usable")
+@Deprecated("not use | unstable")
 class OutlineButton extends OutlinedButton {
   /*final Color? color;
   final Color? textColor;

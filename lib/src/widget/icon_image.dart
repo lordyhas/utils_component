@@ -1,7 +1,11 @@
 import 'dart:typed_data';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+
 enum _ImageType{asset, network, memory }
+
+
 class IconImage extends StatelessWidget {
   final double? size;
   final String imagePath;

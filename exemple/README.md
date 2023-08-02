@@ -1,4 +1,4 @@
-# untitled
+# Sample project of using [utils_component](https://github.com/lordyhas/utils_component)
 
 A new Flutter project.
 

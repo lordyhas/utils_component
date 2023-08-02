@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -53,10 +53,18 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter'..concat(' times'),
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
+            const SizedBox(height: 8.0,),
+            Text(
+              'If button pushed more then 3 times, the Icon below will be changed from FORBIDDEN to AUTHORISED ',
+            ),
+
+            // If button pushed more then 3 times, the Icon below
+            // will be changed from FORBIDDEN to AUTHORISED
+            // using BooleanBuilder
             BooleanBuilder(
-              check: _counter == 3,
+              condition: () => _counter < 3,
               ifTrue: Ink(
                   decoration: BoxDecoration(
                       shape: BoxShape.circle

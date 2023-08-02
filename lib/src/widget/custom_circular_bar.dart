@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:flutter/widgets.dart';
 
 
-
+//todo : finish it
 class CircularProgressMultiBar extends StatefulWidget {
   final double? size;
   //final double? width;

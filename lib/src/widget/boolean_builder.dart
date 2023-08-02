@@ -11,6 +11,8 @@ abstract class BooleanBuilderWidget extends StatelessWidget {
   const BooleanBuilderWidget({
     Key? key,
   }) : super(key: key);
+
+
 }
 
 class ContainerBooleanBuilder extends BooleanBuilderWidget {
@@ -19,10 +21,10 @@ class ContainerBooleanBuilder extends BooleanBuilderWidget {
   final Widget? ifTrue;
   final Widget? ifFalse;
 
-  ContainerBooleanBuilder(
+  const ContainerBooleanBuilder(
       {Key? key,
       this.condition = true,
-      @Deprecated("use condition instead") bool check = true,
+      //@Deprecated("use condition instead") bool check = true,
       this.ifTrue,
       this.ifFalse})
       : super(key: key);
@@ -41,18 +43,18 @@ class ContainerBooleanBuilder extends BooleanBuilderWidget {
 }
 
 class BooleanBuilder extends BooleanBuilderWidget {
-  @Deprecated("use condition instead")
+  @Deprecated("use condition instead, will be remove in the next version")
   final bool check;
   final bool Function() condition;
   final Widget ifTrue;
   final Widget ifFalse;
 
-  BooleanBuilder({
+  const BooleanBuilder({
     Key? key,
     required this.condition,
     required this.ifTrue,
     required this.ifFalse,
-    @Deprecated("use condition instead")
+    //@Deprecated("use condition instead")
     this.check = true,
   }) : super(key: key);
 
